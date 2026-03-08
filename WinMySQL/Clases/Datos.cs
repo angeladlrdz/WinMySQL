@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Data;
 using System.Text;
-using MySql.Data.MySqlClient; //Usar esto
+
+using MySqlConnector;
+
 namespace WinMySQL.Clases
 {
     internal class Datos
     {
-        //Generar cadena de conexion 
-        string cadenaConexion = "server=localhost;user=luis;pwd=joseluis";
+        string cadenaConexion = "server=localhost;user=luis;pwd=joseluis;Database=escolar;port=3307";
         MySqlConnection conexion;
 
         private void Conectar()
@@ -38,6 +41,40 @@ namespace WinMySQL.Clases
             }
         }
 
+        public DataSet ejecutar(string comando)
+        {
+            try
+            {
+                Conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(comando, conexion);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        public bool ejecutarComando(String comando)
+        {
+            try
+            {
+                Conectar();
+                MySqlCommand cmd = new MySqlCommand(comando, conexion);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
     }
 }
