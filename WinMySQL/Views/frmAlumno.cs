@@ -18,17 +18,14 @@ namespace WinMySQL.Views
         {
             InitializeComponent();
         }
-        public frmAlumno(int id, string numControl, string nombre, string segNombre, string apellidoPat, string apellidoMat, string carrera, string correo)
+        public frmAlumno(int numControl, string nombre, string paterno, string materno)
         {
             InitializeComponent();
-            this.id = id;
-            txtNumControl.Text = numControl;
+            txtNumControl.Text = numControl + "";
             txtNombre.Text = nombre;
-            txtSegNombre.Text = segNombre;
-            txtApPaterno.Text = apellidoPat;
-            txtApMaterno.Text = apellidoMat;
-            txtCarrera.Text = carrera;
-            txtCorreo.Text = correo;
+            txtApPaterno.Text = paterno;
+            txtApMaterno.Text = materno;
+            
             updating = true;
         }
 
@@ -42,9 +39,8 @@ namespace WinMySQL.Views
             if (updating == false)
             {
                 bool resultado = dt.ejecutarComando(
-                    $"Insert into Alumnos (NumControl,PrimerNombre, SegundoNombre, ApellidoPaterno, ApellidoMaterno, Carrera, Email) " +
-                    $"values ('{txtNumControl.Text}','{txtNombre.Text}','{txtSegNombre.Text}','{txtApPaterno.Text}','{txtApMaterno.Text}'," +
-                    $"'{txtCarrera.Text}','{txtCorreo.Text}')");
+                    $"Insert into Alumnos (nocontrol, nombre, paterno, materno) " +
+                    $"values ('{txtNumControl.Text}','{txtNombre.Text}','{txtApPaterno.Text}','{txtApMaterno.Text}')");
 
                 if (resultado)
                 {
@@ -59,9 +55,7 @@ namespace WinMySQL.Views
             else
             {
                 bool resultado = dt.ejecutarComando(
-                    $"Update Alumnos set NumControl = '{txtNumControl.Text}', PrimerNombre ='{txtNombre.Text}', SegundoNombre = '{txtSegNombre.Text}'," +
-                    $"ApellidoPaterno = '{txtApPaterno.Text}', ApellidoMaterno ='{txtApMaterno.Text}', Carrera = '{txtCarrera.Text}'," +
-                    $"Email ='{txtCorreo.Text}' " + $"where idAlumnos = {id}");
+                    $"Update Alumnos set nombre ='{txtNombre.Text}', paterno = '{txtApPaterno.Text}', materno ='{txtApMaterno.Text}' where nocontrol = '{txtNumControl.Text}'");
                 if (resultado)
                 {
                     MessageBox.Show("Alumno actualizado correctamente");

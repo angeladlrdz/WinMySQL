@@ -32,17 +32,11 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             txtNumControl = new TextBox();
             txtNombre = new TextBox();
             txtApPaterno = new TextBox();
             txtApMaterno = new TextBox();
-            txtCarrera = new TextBox();
-            txtCorreo = new TextBox();
             btnAceptar = new Button();
-            label7 = new Label();
-            txtSegNombre = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -66,7 +60,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 183);
+            label3.Location = new Point(12, 126);
             label3.Name = "label3";
             label3.Size = new Size(95, 15);
             label3.TabIndex = 2;
@@ -75,29 +69,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 242);
+            label4.Location = new Point(12, 185);
             label4.Name = "label4";
             label4.Size = new Size(99, 15);
             label4.TabIndex = 3;
             label4.Text = "Apellido Materno";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 304);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Carrera";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(12, 366);
-            label6.Name = "label6";
-            label6.Size = new Size(105, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Correo electronico";
             // 
             // txtNumControl
             // 
@@ -115,35 +91,21 @@
             // 
             // txtApPaterno
             // 
-            txtApPaterno.Location = new Point(12, 201);
+            txtApPaterno.Location = new Point(12, 144);
             txtApPaterno.Name = "txtApPaterno";
             txtApPaterno.Size = new Size(264, 23);
             txtApPaterno.TabIndex = 8;
             // 
             // txtApMaterno
             // 
-            txtApMaterno.Location = new Point(12, 260);
+            txtApMaterno.Location = new Point(12, 203);
             txtApMaterno.Name = "txtApMaterno";
             txtApMaterno.Size = new Size(264, 23);
             txtApMaterno.TabIndex = 9;
             // 
-            // txtCarrera
-            // 
-            txtCarrera.Location = new Point(12, 322);
-            txtCarrera.Name = "txtCarrera";
-            txtCarrera.Size = new Size(194, 23);
-            txtCarrera.TabIndex = 10;
-            // 
-            // txtCorreo
-            // 
-            txtCorreo.Location = new Point(12, 384);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(401, 23);
-            txtCorreo.TabIndex = 11;
-            // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(338, 33);
+            btnAceptar.Location = new Point(201, 33);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(75, 23);
             btnAceptar.TabIndex = 12;
@@ -151,38 +113,16 @@
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(12, 126);
-            label7.Name = "label7";
-            label7.Size = new Size(101, 15);
-            label7.TabIndex = 13;
-            label7.Text = "Segundo Nombre";
-            // 
-            // txtSegNombre
-            // 
-            txtSegNombre.Location = new Point(13, 153);
-            txtSegNombre.Name = "txtSegNombre";
-            txtSegNombre.Size = new Size(263, 23);
-            txtSegNombre.TabIndex = 14;
-            // 
             // frmAlumno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(421, 457);
-            Controls.Add(txtSegNombre);
-            Controls.Add(label7);
+            ClientSize = new Size(297, 244);
             Controls.Add(btnAceptar);
-            Controls.Add(txtCorreo);
-            Controls.Add(txtCarrera);
             Controls.Add(txtApMaterno);
             Controls.Add(txtApPaterno);
             Controls.Add(txtNombre);
             Controls.Add(txtNumControl);
-            Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -199,16 +139,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private Label label6;
         private TextBox txtNumControl;
         private TextBox txtNombre;
         private TextBox txtApPaterno;
         private TextBox txtApMaterno;
-        private TextBox txtCarrera;
-        private TextBox txtCorreo;
         private Button btnAceptar;
-        private Label label7;
-        private TextBox txtSegNombre;
     }
 }

@@ -33,9 +33,11 @@
             txtAlumno = new TextBox();
             btnAgregar = new Button();
             splitContainer1 = new SplitContainer();
+            button1 = new Button();
             dgvAlumnos = new DataGridView();
             cmsData = new ContextMenuStrip(components);
             eliminarToolStripMenuItem = new ToolStripMenuItem();
+            ofdExcel = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -59,6 +61,7 @@
             txtAlumno.Name = "txtAlumno";
             txtAlumno.Size = new Size(384, 23);
             txtAlumno.TabIndex = 1;
+            txtAlumno.TextChanged += txtAlumno_TextChanged;
             // 
             // btnAgregar
             // 
@@ -79,6 +82,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(txtAlumno);
             splitContainer1.Panel1.Controls.Add(btnAgregar);
             splitContainer1.Panel1.Controls.Add(label1);
@@ -89,6 +93,16 @@
             splitContainer1.Size = new Size(761, 459);
             splitContainer1.SplitterDistance = 115;
             splitContainer1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(573, 47);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "Asistencia";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dgvAlumnos
             // 
@@ -126,6 +140,7 @@
             Name = "frmAlumnos";
             Text = "Alumnos";
             Activated += frmAlumnos_Activated;
+            Load += frmAlumnos_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -145,5 +160,7 @@
         private DataGridView dgvAlumnos;
         private ContextMenuStrip cmsData;
         private ToolStripMenuItem eliminarToolStripMenuItem;
+        private OpenFileDialog ofdExcel;
+        private Button button1;
     }
 }

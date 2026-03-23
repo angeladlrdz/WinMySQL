@@ -80,6 +80,9 @@
             txtMateria.Name = "txtMateria";
             txtMateria.Size = new Size(386, 23);
             txtMateria.TabIndex = 1;
+            txtMateria.TextChanged += txtMateria_TextChanged;
+            txtMateria.KeyPress += txtMateria_KeyPress;
+            txtMateria.KeyUp += txtMateria_KeyUp;
             // 
             // label1
             // 
