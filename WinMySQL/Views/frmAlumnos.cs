@@ -87,10 +87,10 @@ namespace WinMySQL.Views
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int idAlumnos = Convert.ToInt32(dgvAlumnos.CurrentRow.Cells[0].Value);
+            int nocontrol = Convert.ToInt32(dgvAlumnos.CurrentRow.Cells[0].Value);
             if (MessageBox.Show("Deseas eliminar al alumno: " + dgvAlumnos.CurrentRow.Cells[1].Value.ToString() + " " + dgvAlumnos.CurrentRow.Cells[2].Value.ToString() + " " + dgvAlumnos.CurrentRow.Cells[3].Value.ToString(), "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                bool f = datos.ejecutarComando($"Delete from Alumnos where idAlumnos =" + $"{idAlumnos}");
+                bool f = datos.ejecutarComando($"Delete from Alumnos where nocontrol = " + $"{nocontrol}");
                 if (f)
                 {
                     MessageBox.Show("Registro Eliminado", "Sistema");
